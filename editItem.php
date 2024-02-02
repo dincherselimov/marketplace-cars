@@ -8,9 +8,12 @@ if (!isset($_SESSION['valid'])) {
 include_once("connection.php");
 
 if (isset($_POST['update'])) {
+    
     $id = $_POST['id'];
-    $title = $_POST['title'];
-    $description = $_POST['description'];
+
+    $title = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_STRING);
+    $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_STRING);
+
 
     $result = mysqli_query($mysqli, "SELECT image_path FROM items WHERE id=$id");
     $res = mysqli_fetch_array($result);

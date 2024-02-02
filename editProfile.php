@@ -13,12 +13,12 @@ if(isset($_POST['update']))
 {	
 	$id = $_POST['id'];
 	
-	$name = $_POST['name'];
-    $surname = $_POST['surname'];
-    $email = $_POST['email'];
-    $phone = $_POST['phone'];
-    $city = $_POST['city'];
-	
+	$name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
+    $surname = filter_var($_POST['surname'], FILTER_SANITIZE_STRING);
+    $email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+    $phone = filter_var($_POST['phone'], FILTER_SANITIZE_NUMBER_INT);
+    $city = filter_var($_POST['city'], FILTER_SANITIZE_STRING);
+
 	if(empty($name) || empty($surname) || empty($email) || empty($phone) || empty($city)) {
 				
 		if(empty($name)) {
@@ -46,6 +46,7 @@ if(isset($_POST['update']))
 }
 ?>
 <?php
+
 $id = $_GET['id'];
 
 $result = mysqli_query($mysqli, "SELECT * FROM users WHERE id=$id");
