@@ -1,0 +1,32 @@
+
+<html>
+<head>
+    <title>Add Cars For Sale</title>
+</head>
+
+<body>
+    <a href="index.php">Home</a> | <a href="view.php">View Cars</a> | <a href="logout.php">Logout</a>
+    <br/><br/>
+
+    <form action="addItem.php" method="post" name="form1" enctype="multipart/form-data">
+        <table width="25%" border="0">
+            <tr> 
+                <td>Brand</td>
+                <td><input type="text" name="title"></td>
+            </tr>
+            <tr> 
+                <td>Description</td>
+                <td><input type="text" name="description"></td>
+            </tr>
+            <tr> 
+                <td>Upload Image</td>
+                <td><input type="file" name="image"></td>
+            </tr>
+            <tr> 
+                <td></td>
+                <td><input type="submit" name="Submit" value="Add"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
