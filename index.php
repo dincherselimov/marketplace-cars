@@ -38,8 +38,7 @@
 	
 	include_once("connection.php");
 
-	$result = mysqli_query($mysqli, "SELECT * FROM items  ORDER BY id DESC");
-	$result2 = mysqli_query($mysqli, "SELECT items.*, users.name AS name, users.email AS email, users.phone AS phone 
+	$result = mysqli_query($mysqli, "SELECT items.*, users.name AS name, users.email AS email, users.phone AS phone 
 	FROM items 
 	JOIN users ON items.user_id = users.id
 	ORDER BY items.id DESC");
@@ -57,7 +56,7 @@
 
 		</tr>
 		<?php
-		while ($res = mysqli_fetch_array($result2)) {
+		while ($res = mysqli_fetch_array($result)) {
 			echo "<tr>";
 			echo "<td>".$res['title']."</td>";
 			echo "<td>".$res['description']."</td>";

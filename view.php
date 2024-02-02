@@ -7,9 +7,9 @@ if(!isset($_SESSION['valid'])) {
 ?>
 
 <?php
-include_once("connection.php");
+	include_once("connection.php");
 
-$result = mysqli_query($mysqli, "SELECT * FROM items WHERE user_id=".$_SESSION['id']." ORDER BY id DESC");
+	$result = mysqli_query($mysqli, "SELECT * FROM items WHERE user_id=".$_SESSION['id']." ORDER BY id DESC");
 ?>
 
 <html>

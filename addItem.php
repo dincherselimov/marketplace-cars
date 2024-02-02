@@ -8,8 +8,10 @@ if (!isset($_SESSION['valid'])) {
 include_once("connection.php");
 
 if (isset($_POST['Submit'])) {    
-    $title = $_POST['title'];
-    $description = $_POST['description'];
+    
+    $title = filter_var($_POST['title'], FILTER_SANITIZE_STRING);
+    $description = filter_var($_POST['description'], FILTER_SANITIZE_STRING);
+
     $user_id = $_SESSION['id'];
     
     if (empty($title) || empty($description) || empty($_FILES['image']['name'])) {

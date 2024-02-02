@@ -10,24 +10,28 @@
 include("connection.php");
 
 if(isset($_POST['submit'])) {
+
 	$email = mysqli_real_escape_string($mysqli, $_POST['email']);
 	$pass = mysqli_real_escape_string($mysqli, $_POST['password']);
 
-	if($email == "" || $pass == "") {
+	if (empty($email) || empty($pass)) {
 		echo "Either username or password field is empty.";
 		echo "<br/>";
 		echo "<a href='login.php'>Go back</a>";
 	} else {
 		$result = mysqli_query($mysqli, "SELECT * FROM users WHERE email='$email' AND password=md5('$pass')")
-					or die("Could not execute the select query.");
+		
+			or die("Could not execute the select query.");
 		
 		$row = mysqli_fetch_assoc($result);
 		
 		if(is_array($row) && !empty($row)) {
+
 			$validuser = $row['email'];
 			$_SESSION['valid'] = $validuser;
 			$_SESSION['name'] = $row['name'];
 			$_SESSION['id'] = $row['id'];
+			
 		} else {
 			echo "Invalid username or password.";
 			echo "<br/>";

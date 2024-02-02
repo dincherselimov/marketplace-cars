@@ -10,14 +10,14 @@ include("connection.php");
 
 if(isset($_POST['submit'])) {
 
-	$name = $_POST['name'];
-	$surname = $_POST['surname'];
-	$email = $_POST['email'];
-	$phone = $_POST['phone'];
-	$city = $_POST['city'];
+	$name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
+    $surname = filter_var($_POST['surname'], FILTER_SANITIZE_STRING);
+    $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
+    $phone = $_POST['phone'];
+	$city = filter_var($_POST['city'], FILTER_SANITIZE_STRING);
 	$pass = $_POST['password'];
 
-	if($email == "" || $pass == "" || $name == "" || $email == "") {
+	if (empty($name) || empty($surname) || empty($email) || empty($phone) || empty($city) || empty($pass) ) {
 		echo "All fields should be filled. Either one or many fields are empty.";
 		echo "<br/>";
 		echo "<a href='register.php'>Go back</a>";
