@@ -1,0 +1,85 @@
+.navigation a {
+    text-decoration: none;
+    color: #333;
+}
+
+.content {
+    margin-top: 20px;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.header-row {
+    background-color: #CCCCCC;
+}
+
+.data-table th, .data-table td {
+    border: 1px solid #CCCCCC;
+    padding: 10px;
+    text-align: left;
+}
+
+.data-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.item-image {
+    max-width: 100px;
+    height: auto;
+}
+
+.edit-link, .delete-link {
+    text-decoration: none;
+    color: #333;
+}
+
+.nav-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: 2px solid #007bff;
+    color: #007bff;
+    background-color: transparent;
+    border-radius: 5px;
+    margin-right: 10px; /* Adjust spacing between buttons */
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  }
+  
+  .nav-button:hover {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #0056b3;
+  }
+
+
+  .account-info {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size:20px;
+}
+
+.table-header {
+    background-color: #CCCCCC;
+    font-weight: bold;
+}
+
+.info-table td, .info-table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}

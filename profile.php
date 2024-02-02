@@ -15,22 +15,26 @@ if(!isset($_SESSION['valid'])) {
 <html>
 <head>
 	<title>Homepage</title>
+	<link rel="stylesheet" type="text/css" href="view.css">
 </head>
 
 <body>
-	<a href="index.php">Home</a> | <a href="view.php">View Cars</a> | <a href="logout.php">Logout</a>
+	<a href="index.php" class="nav-button">Home</a> 
+	<a href="view.php" class="nav-button">View Cars</a> 
+	<a href="logout.php" class="nav-button">Logout</a>
 	<br/><br/>
 	</br>	
-	<h1>Account Information</h1>
-	<table width='100%' border=0>
-		<tr bgcolor='#CCCCCC'>
-			<td>Name</td>
-			<td>Surname</td>
-			<td>Email</td>
-            <td>Phone</td>
-            <td>City</td>
-			<td>Edit</td>
-		</tr>
+	<div class="account-info">
+        <h1>Account Information</h1>
+        <table class="info-table">
+            <tr class="table-header">
+                <td>Name</td>
+                <td>Surname</td>
+                <td>Email</td>
+                <td>Phone</td>
+                <td>City</td>
+                <td>Edit</td>
+            </tr>
 		<?php
 		while($res = mysqli_fetch_array($result)) {		
 			echo "<tr>";
@@ -44,5 +48,6 @@ if(!isset($_SESSION['valid'])) {
 		}
 		?>
 	</table>	
+	</div>
 </body>
 </html>
